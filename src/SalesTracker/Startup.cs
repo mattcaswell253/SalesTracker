@@ -28,10 +28,12 @@ namespace SalesTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<SalesTrackerContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddEntityFramework()
-                .AddEntityFrameworkSqlServer();
+                .AddDbContext<SalesTrackerContext>(options =>
+                    options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<SalesTrackerContext>()
+                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -43,11 +45,12 @@ namespace SalesTracker
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+            app.UseIdentity();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Account}/{action=Index}/{id?}");
             });
             app.Run(async (context) =>
             {

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "New Inventory Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SalesTracker.Models.Inventory
+
+<h2>Create a new Inventory Item</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Price)
+    @Html.EditorFor(model => model.Price)
+
+    <input type="submit" value="Create" class="btn btn-default" />
+}

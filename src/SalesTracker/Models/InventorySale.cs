@@ -11,6 +11,7 @@ namespace SalesTracker.Models
     public class InventorySale
     {
         [Key]
+        public int SalesInventoryId { get; set; }
         public int InventoryId { get; set; }
         public virtual Inventory Inventory { get; set; }
         public int SaleId { get; set; }

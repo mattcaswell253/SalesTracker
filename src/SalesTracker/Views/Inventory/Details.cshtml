@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Details - Inventory Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SalesTracker.Models.Inventory
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="">
+        <h2>Edit or Delete @Html.DisplayFor(model => model.Name) Details</h2>
+        <div>@Html.ActionLink("Edit", "Edit", new { id = Model.InventoryId }, null) | @Html.ActionLink("Delete", "Delete", new { id = Model.InventoryId }, null)</div>
+    </div>
+    <hr />
+    <div class="">
+        <div class="row">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="row">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+        <div class="row">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="">
+        <div class="row">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="row">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+        <div class="row">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+
+}

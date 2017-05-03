@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+@model IEnumerable<SalesTracker.Models.Inventory>
+
+<div class="row">
+    @foreach (var inventory in Model)
+    {
+
+        <div class-="container">
+            <div class="">
+                <div class="row">
+                    @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId })
+                </div>
+            </div>
+        </div>
+    }
+</div>

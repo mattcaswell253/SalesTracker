@@ -11,10 +11,12 @@ namespace SalesTracker.Models
     public class Inventory
     {
         [Key]
+        public int InventoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }
-        public int InventoryId { get; set;}
+        public virtual User User { get; set; }
+
         public virtual ICollection<InventorySale> InventorySales { get; set; }
 
         public Inventory(string name, string description, string price, int id = 0)
@@ -23,5 +25,6 @@ namespace SalesTracker.Models
             Description = description;
             Price = price;
         }
+        public Inventory() { }
     }
 }

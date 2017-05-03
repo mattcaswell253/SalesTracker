@@ -18,7 +18,8 @@ namespace SalesTracker.Models
         public int SaleId { get; set; }
         public string CustomerName { get; set; }
         public virtual Inventory Inventory { get; set; }
-        public virtual ICollection<Inventory> Inventories { get; set; }
+        public virtual User User { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<InventorySale> InventorySales { get; set; }
     }
