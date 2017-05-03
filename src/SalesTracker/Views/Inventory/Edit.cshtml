@@ -1,10 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@model SalesTracker.Models.Inventory
-
-<h4>Edit news letter: @Html.DisplayFor(model => model.Name)</h4>
+﻿@model SalesTracker.Models.Inventory
+<hr />
+<h4>Edit inventory item: @Html.DisplayFor(model => model.Name)</h4>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.InventoryId)

@@ -7,13 +7,22 @@
 @model IEnumerable<SalesTracker.Models.Inventory>
 
 <div class="row">
+    <h4 class="display-item">Display view</h4>
+    <div id="item-display"></div>
+
+
     @foreach (var inventory in Model)
     {
-
         <div class-="container">
             <div class="">
                 <div class="row">
-                    @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId })
+                    @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId }) | <span class="edit">Edit</span> | <span class="delete">Delete</span>
+                    <div>
+                        <span id="edit"></span>
+                    </div>
+                    <div>
+                        <span id="delete"></span>
+                    </div>
                 </div>
             </div>
         </div>

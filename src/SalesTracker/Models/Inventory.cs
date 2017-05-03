@@ -24,6 +24,8 @@ namespace SalesTracker.Models
             Name = name;
             Description = description;
             Price = price;
+            InventoryId = id;
+
         }
         public Inventory() { }
     }

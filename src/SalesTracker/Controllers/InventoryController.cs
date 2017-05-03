@@ -26,9 +26,14 @@ namespace SalesTracker.Controllers
         {
             return View(_db.Inventories.ToList());
         }
+        public IActionResult DisplayObject()
+        {
+            Inventory inventory = new Inventory("XS Dildo", "Mold of Sandro's penis", "$1", 1);
+            return Json(inventory);
+        }
         public IActionResult Details(int id)
         {
-            var thisInventory = _db.Inventories.FirstOrDefault(inventorys => inventorys.InventoryId == id);
+            var thisInventory = _db.Inventories.FirstOrDefault(inventory => inventory.InventoryId == id);
             return View(thisInventory);
         }
         public IActionResult Create()
