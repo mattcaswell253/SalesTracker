@@ -203,8 +203,16 @@
 --resource:"C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\obj\Debug\netcoreapp1.0\SalesTrackerdotnet-compile.deps.json",SalesTracker.deps.json
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Program.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Startup.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Controllers\AccountController.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Controllers\InventoryController.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Migrations\20170503204755_Initial.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Migrations\20170503204755_Initial.Designer.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Migrations\SalesTrackerContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\Comment.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\Inventory.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\InventorySale.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\Sale.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\SalesTrackerContext.cs
 C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\Models\User.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\ViewModels\LoginViewModel.cs
+C:\Users\epicodus\Desktop\SalesTracker\src\SalesTracker\ViewModels\RegisterViewModel.cs

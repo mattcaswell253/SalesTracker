@@ -12,13 +12,14 @@ namespace SalesTracker.Models
     {
         public Sale()
         {
-            this.Inventory = new HashSet<Inventory>();
             this.Comments = new HashSet<Comment>();
         }
         [Key]
         public int SaleId { get; set; }
         public string CustomerName { get; set; }
-        public virtual ICollection<Inventory> Inventory { get; set; }
+        public virtual Inventory Inventory { get; set; }
+        public virtual ICollection<Inventory> Inventories { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<InventorySale> InventorySales { get; set; }
     }
 }
