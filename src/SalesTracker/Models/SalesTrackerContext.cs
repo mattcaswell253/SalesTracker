@@ -8,6 +8,10 @@ namespace SalesTracker.Models
 {
     public class SalesTrackerContext : DbContext
     {
+        public SalesTrackerContext(DbContextOptions options) : base(options)
+        {
+
+        }
         public virtual DbSet<Inventory> Inventory{ get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
