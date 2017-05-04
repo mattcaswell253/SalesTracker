@@ -6,25 +6,37 @@
 @using System.Security.Claims
 @model IEnumerable<SalesTracker.Models.Inventory>
 
-<div class="row">
-    <h4 class="display-item">Display view</h4>
-    <div id="item-display"></div>
-
-
+<div class-="container">
+    <h4>Create New Inventory Item</h4>
+    <form action="NewInventory" class="new-inventory">
+        <label for="newName">Name: </label>
+        <input type="text" name="newName" />
+        <label for="newDescription">Description: </label>
+        <input type="text" name="newDescription" />
+        <label for="newPrice">Price: </label>
+        <input type="text" name="newPrice" />
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result6"></div>
+    <hr />
+</div>
+<div class="container">
+    <h4>Inventory List:</h4>
     @foreach (var inventory in Model)
     {
-        <div class-="container">
-            <div class="">
-                <div class="row">
-                    @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId }) | <span class="edit">Edit</span> | <span class="delete">Delete</span>
-                    <div>
-                        <span id="edit"></span>
-                    </div>
-                    <div>
-                        <span id="delete"></span>
-                    </div>
-                </div>
+
+        <div class="row inventory">
+            @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId }) | @Html.DisplayFor(model => inventory.Description) | @Html.DisplayFor(model => inventory.Price) | <span class="edit">Edit</span> | <span class="delete">Delete</span>
+            <div>
+                <span id="edit"></span>
+            </div>
+            <div>
+                <span id="delete"></span>
             </div>
         </div>
     }
+    <hr />
 </div>
+    <h3>Using JSON to display an object</h3>
+    <h4 class="display-object">Display object</h4>
+    <div id="result3"></div>

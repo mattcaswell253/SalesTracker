@@ -26,11 +26,6 @@ namespace SalesTracker.Controllers
         {
             return View(_db.Inventories.ToList());
         }
-        public IActionResult DisplayObject()
-        {
-            Inventory inventory = new Inventory("XS Dildo", "Mold of Sandro's penis", "$1", 1);
-            return Json(inventory);
-        }
         public IActionResult Details(int id)
         {
             var thisInventory = _db.Inventories.FirstOrDefault(inventory => inventory.InventoryId == id);
@@ -40,6 +35,7 @@ namespace SalesTracker.Controllers
         {
             return View();
         }
+        
 
         [HttpPost]
         public async Task<IActionResult> Create(Inventory inventory)
@@ -76,6 +72,13 @@ namespace SalesTracker.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index", "Account");
         }
-
+        [HttpPost]
+        public IActionResult NewInventory(string newName, string newDescription, string newPrice)
+        {
+            Inventory newInventory = new Inventory(newName, newDescription, newPrice);
+            _db.Inventories.Add(newInventory);
+            _db.SaveChanges();
+            return Json(newInventory);
+        }
     }
 }
