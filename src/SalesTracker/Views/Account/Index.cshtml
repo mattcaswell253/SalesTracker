@@ -20,23 +20,11 @@
     <div id="result6"></div>
     <hr />
 </div>
-<div class="container">
-    <h4>Inventory List:</h4>
-    @foreach (var inventory in Model)
-    {
 
-        <div class="row inventory">
-            @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId }) | @Html.DisplayFor(model => inventory.Description) | @Html.DisplayFor(model => inventory.Price) | <span class="edit">Edit</span> | <span class="delete">Delete</span>
-            <div>
-                <span id="edit"></span>
-            </div>
-            <div>
-                <span id="delete"></span>
-            </div>
-        </div>
-    }
-    <hr />
+<div class="container">
+    <h4>Complete Inventory List:</h4>
+    <h4 class="inventory" data-request-url="@Url.Action("Items")">Inventory List:</h4>
+    <div id="result"></div>
+
+    <div class="edit"></div>
 </div>
-    <h3>Using JSON to display an object</h3>
-    <h4 class="display-object">Display object</h4>
-    <div id="result3"></div>

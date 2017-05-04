@@ -35,8 +35,6 @@ namespace SalesTracker.Controllers
         {
             return View();
         }
-        
-
         [HttpPost]
         public async Task<IActionResult> Create(Inventory inventory)
         {

@@ -69,23 +69,6 @@ namespace SalesTracker.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
-        public IActionResult Edit(int id)
-        {
-            var thisInventory = _db.Inventories.FirstOrDefault(inventory => inventory.InventoryId == id);
-            return View(thisInventory);
-        }
-        [HttpPost]
-        public IActionResult Edit(Inventory inventory)
-        {
-            _db.Entry(inventory).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index", "Account");
-        }
-        public IActionResult DisplayObject(int id)
-        {
-            var thisInventory = _db.Inventories.FirstOrDefault(inventory => inventory.InventoryId == id);
-            return Json(thisInventory);
-        }
         [HttpPost]
         public IActionResult NewInventory(string newName, string newDescription, string newPrice)
         {
@@ -93,6 +76,10 @@ namespace SalesTracker.Controllers
             _db.Inventories.Add(newInventory);
             _db.SaveChanges();
             return Json(newInventory);
+        }
+        public IActionResult Items()
+        {
+            return View(_db.Inventories.ToList());
         }
     }
 }

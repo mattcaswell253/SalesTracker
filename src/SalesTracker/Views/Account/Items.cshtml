@@ -1,0 +1,14 @@
+﻿@model IEnumerable<SalesTracker.Models.Inventory>
+
+@foreach (var inventory in Model)
+{
+    <div class="row inventory">
+        @Html.ActionLink(inventory.Name, "Details", "Inventory", new { id = inventory.InventoryId }) - @Html.DisplayFor(model => inventory.Description) - @Html.DisplayFor(model => inventory.Price) | <button class="btn btn-outline-warning btn-sm inventory-list" data-request-url='@Url.Action("Edit", "Inventory", new { id = inventory.InventoryId })'>Edit</button> <button class="btn btn-outline-danger btn-sm inventory-list" data-request-url='@Url.Action("Delete", "Inventory", new { id = inventory.InventoryId })'>Delete</button><br />
+        <div>
+            <span id="edit"></span>
+        </div>
+        <div>
+            <span id="delete"></span>
+        </div>
+    </div>
+}
